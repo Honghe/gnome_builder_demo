@@ -1,0 +1,9 @@
+data/org.gnome.Ee.desktop.in
+data/org.gnome.Ee.appdata.xml.in
+data/org.gnome.Ee.gschema.xml
+src/window.ui
+
+
+
+src/main.py
+src/window.py
