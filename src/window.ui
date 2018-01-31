@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="EeWindow" parent="GtkApplicationWindow">
+ <object class="GtkApplicationWindow" id="EeWindow" >
     <property name="default-width">600</property>
     <property name="default-height">300</property>
     <child type="titlebar">
@@ -20,5 +20,5 @@
         </attributes>
       </object>
     </child>
-  </template>
+  </object>
 </interface>

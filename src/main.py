@@ -40,10 +40,19 @@ class Application(Gtk.Application):
         super().__init__(application_id='org.gnome.Ee',
                          flags = Gio.ApplicationFlags.FLAGS_NONE)
 
+    def do_startup(self):
+        print('do_startup')
+        Gtk.Application.do_startup(self)
+        builder = Gtk.Builder()
+        builder.add_from_resource("/org/gnome/Ee/window.ui")
+        self.builder = builder
+
     def do_activate(self):
+        print("do_activate")
         win = self.props.active_window
         if not win:
-            win = EeWindow(application=self)
+            win = self.builder.get_object("EeWindow")
+        self.builder.get_object("label")
         win.present()
 
 def main(version):
