@@ -53,7 +53,10 @@ class Application(Gtk.Application):
         if not win:
             win = self.builder.get_object("EeWindow")
         self.builder.get_object("label")
-        win.present()
+        # The application does not know about the window so it exits immediately.
+        # so bind the application to the window.
+        win.set_application(self)
+        win.show_all()
 
 def main(version):
     app = Application()
